@@ -1,0 +1,6 @@
+title: "A test site for displaying proof od service"
+base_url: "/kosson-paper" # http://jekyllrb.com/docs/github-pages/#project-page-url-structure
+defaults:
+  - scope: {path: ""}
+    values:
+      layout: "page"

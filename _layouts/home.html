@@ -1,0 +1,17 @@
+---
+layout: base
+---
+<div class="jumbotron">
+  <h1>{{ site.title }}</h1>
+  {{ content }}
+</div>
+
+{% for post in site.posts %}
+  <article>
+    <h3>
+      <a href="{{ site.base_url }}{{ post.url }}">{{ post.title}}</a>
+      <small>{{ post.date | date_to_string }}</small>
+    </h3>
+    {{ post.excerpt }}
+  </article>
+{% endfor %}

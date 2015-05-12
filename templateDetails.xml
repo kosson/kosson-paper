@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="template">
+        <name>kosson-paper</name>
+        <creationDate>2014-11-29</creationDate>
+        <author>Nicolaie Constantinescu</author>
+        <authorEmail>kosson@gmail.com</authorEmail>
+        <authorUrl>http://www.kosson.ro</authorUrl>
+        <copyright>Nicolaie Constantinescu</copyright>
+        <license>CC-BY</license>
+        <version>1.0.0</version>
+        <description>Un template modern pentru noul Kosson</description>
+        <files>
+                <filename>index.php</filename>
+                <filename>templateDetails.xml</filename>
+                <folder>images</folder>
+                <folder>css</folder>
+        </files>
+        <positions>
+          <position>news-small</position>
+          <position>search</position>
+          <position>lang</position>
+          <position>zone</position>
+          <position>categories</position>
+          <position>column1</position>
+          <position>breadcrumb</position>
+          <position>footer</position>
+        </positions>
+</extension>

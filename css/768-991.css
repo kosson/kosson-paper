@@ -1,0 +1,25 @@
+/*@media only screen and (max-width: 768px) {*/
+
+  /*
+
+  /*
+  * Stilizarea primului articol care apare pe prima pagină
+  * Stilizare articole deschise
+  **/
+
+  .item-page div[itemprop="articleBody"] {
+    column-count: 1;
+  }
+
+  /* butoanele de rasfoit articole inainte si inapoi */
+  .item-page .pager {
+    margin: 0; /* OVERRIDE BOOTSTRAP */
+    background-color: white;
+  }
+
+  .item-page div[itemprop="articleBody"] {
+
+  }
+
+
+/*}*/

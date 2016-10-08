@@ -7,8 +7,8 @@
         <authorUrl>http://www.kosson.ro</authorUrl>
         <copyright>Nicolaie Constantinescu</copyright>
         <license>CC-BY</license>
-        <version>1.0.0</version>
-        <description>Un template modern pentru noul Kosson</description>
+        <version>1.1.0</version>
+        <description>Template actualizat dupa trecerea la 3.5.1</description>
         <files>
                 <filename>index.php</filename>
                 <filename>templateDetails.xml</filename>
@@ -23,6 +23,7 @@
           <position>categories</position>
           <position>column1</position>
           <position>breadcrumb</position>
+          <position>infostructures</position>
           <position>footer</position>
         </positions>
 </extension>

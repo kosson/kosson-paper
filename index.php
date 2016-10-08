@@ -23,16 +23,52 @@
         <link rel="stylesheet"
               href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css"
               type="text/css" />
+        <link rel="stylesheet"
+              media="(min-width: 320px)"
+              href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/320-479.css"
+              type="text/css" />
+        <link rel="stylesheet"
+              media="(min-width: 480px)"
+              href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/480-767.css"
+              type="text/css" />
+        <link rel="stylesheet"
+              media="(min-width: 768px)"
+              href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/768-991.css"
+              type="text/css" />
+        <link rel="stylesheet"
+              media="(minwidth: 992px)"
+              href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/992-1999.css"
+              type="text/css" />
         <?php
           // Adauga modernizr pentru IE
           $doc->addScript('templates/' . $this->template . '/js/modernizr.custom.76638.js');
         ?>
+        <!-- Dependințe SyntaxHighlighter -->
+        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/shCore.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/shCoreDefault.css" type="text/css" />
+
+        <!-- Încărcare scripturi necesare pentru SyntaxHighlighter -->
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/SyntaxHighlighter/shCore.js"></script>
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/SyntaxHighlighter/shAutoloader.js"></script>
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/SyntaxHighlighter/shBrushBash.js"></script>
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/SyntaxHighlighter/shBrushXml.js"></script>
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/SyntaxHighlighter/shBrushCss.js"></script>
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/SyntaxHighlighter/shBrushJScript.js"></script>
+
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js"></script>
+        <!-- Dependința omnivore https://github.com/mapbox/leaflet-omnivore -->
+        <script src="http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js"></script>
+        <!-- Dependința leaflet-ajax https://github.com/calvinmetcalf/leaflet-ajax -->
+        <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/leaflet/ajax/leaflet.ajax.min.js"></script>
+
         <!--[if lt IE 9]>
           <script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
         <![endif]-->
       </head>
 
-      <body class="container-fluid">
+      <body>
         <!--
         Toate modulele (pozitii) din zona de header a siteului:
         * banner      (none)
@@ -86,6 +122,7 @@
           <section class="news-small">
             <jdoc:include type="modules" name="news-small" style="html5" />
           </section>
+
         </header>
 
         <!--
@@ -93,13 +130,15 @@
         * nav         (none)
         Semantic: este sectiune in body dedicata orientarii, fie prin meniu, fie prin alte instrumente
         -->
+
         <nav class="orientation">
 
           <!--
           Meniul de navigare pentru zone ale siteului
           Semantic: este ceea ce HTML5 desemneaza a fi un meniu
           -->
-          <div class="navbar">
+
+          <div class="navbar navbar-default">
             <div class="navbar-inner">
               <div class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-collapse">
                 <a class="btn-navbar"> <!--  data-toggle="collapse" data-target=".nav-collapse" -->
@@ -118,6 +157,9 @@
 
             </div><!-- .navbar-inner -->
           </div><!--.navbar .zone-->
+
+
+
 
           <!--
           Meniul de navigare pentru categoriile siteului
@@ -145,33 +187,27 @@
         -->
         <main id="content" class="">
           <!-- O sectiune care cuprinde intregul continut -->
-          <section class="articles container-fluid">
-            <jdoc:include type="component" />
+          <section class="articles">
             <jdoc:include type="modules" name="column1" style="none" />
+            <jdoc:include type="component" />
           </section>
         </main>
 
         <footer class="">
-          <jdoc:include type="modules" name="footer" />
+
+          <!-- Structuri primare de gestiune si asociere  -->
+          <section class="upper-footer">
+            <jdoc:include type="modules" name="infostructures" style="none" />
+          </section>
+
+          <section class="main-footer">
+            <jdoc:include type="modules" name="footer" style="none" />
+          </section>
+
         </footer>
-        <!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//stat.kosson.ro/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//stat.kosson.ro/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+        <!-- Executie SyntaxHighlighter -->
+        <script type="text/javascript">SyntaxHighlighter.all()</script>
 
       </body>
-
-
-
 </html>

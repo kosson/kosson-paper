@@ -1,0 +1,202 @@
+/*@media only screen and (min-width: 320px) and (max-width: 479px){*/
+
+  header {
+    padding: 0;
+  }
+
+
+  /* and (max-width: 479px) */
+  /*.leading-0 {
+    column-count: 1;
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+  }*/
+
+  /*.leading-0,
+  .item {
+    font-size: small;
+  }*/
+
+  h2.item {
+  }
+
+  /*
+  * Stilizarea leadingului
+  */
+  .leading-0 h2.item-title,
+  .item .item-title {
+    padding: 0 0.2em 0.2em;
+    font-variant: all-petite-caps;
+    line-height: 0.95em;
+  }
+
+  .leading-0 h2.item-title {
+    background-color: rgba(47, 109, 67, 1);
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .item .item-title {
+    text-align: center;
+    border-bottom: 0.05em dashed rgba(255, 19, 1, 0.6);
+  }
+
+  .leading-0 .item-title a:link,
+  .leading-0 .item-title a:visited {
+    color: white;
+  }
+
+
+  #top img {
+    display: inline-block;
+    clear: both;
+  }
+
+  .search {
+    display: block;
+  }
+
+  /*
+  * Stilizare article-info
+  */
+  .article-info {
+    width: 95%;
+  }
+
+  .leading-0 .article-info,
+  .items-row .article-info {
+    background-color: rgba(47, 109, 67, 0.2);
+    padding: 0.5em;
+    margin: 0.5em 0;
+  }
+
+  .leading-0 .article-info,
+  .items-row .article-info {
+    color: rgba(47, 109, 67, 1);
+  }
+
+  /*
+  * Stilizare bloc informatie din leading-0
+  */
+  .parent-category-name,
+  .icon-calendar,
+  .hits {
+    display: none;
+  }
+
+  .createdby,
+  .category-name,
+  .create {
+    color: rgba(147, 58, 63, 1);
+    font-size: x-small;
+    float: left;
+    margin: 0 auto;
+    margin-right: 0.5em;
+  }
+
+  /*
+  * Stilizare bloc informatie din .items-row
+  */
+
+  .leading-0 .create,
+  .leading-0 .hits,
+  .leading-0 .createdby {
+    color: black;
+  }
+
+  .leading-0 .createdby a:link,
+  .createdby a:link,
+  .category-name a:link,
+  .leading-0 .category-name a:link {
+    color: rgba(47, 109, 67, 1);
+  }
+
+  .category-name a:visited,
+  .leading-0 .category-name a:visited {
+    color: black;
+  }
+
+  .category-name a:hover,
+  .leading-0 .category-name a:hover {
+    color: black;
+  }
+
+  dd.createdby,
+  .create,
+  .hits {
+    color: black;
+  }
+
+  /* Stilizare
+  * NEWSFLASH
+  */
+  .newsflash-horiz{
+    padding: 0;
+    font-weight: lighter;
+  }
+
+  .newsflash-horiz > li {          /* li-urile */
+    background: white;
+    box-shadow: inset 0 0 2.5em rgba(156, 156, 109, 1), 0 0 0.3em white;
+
+    width: 15em;
+    vertical-align: top;
+    display: inline-block;
+
+    margin: 0.1em;
+    padding: 0 0.25em;
+
+    font-size: x-small;
+    line-height: 0.95em; /* rescriere bootstrap */
+    text-align: center;
+
+    /* For IE 7 */
+    zoom: 1;
+    *display: inline;
+  }
+
+  .newsflash-title {
+    font-size: small;
+    line-height: 0.95em;
+  }
+
+  .newsflash-title a:link,
+  .newsflash-title a:visited{
+    display: block;
+    text-decoration: none;
+    padding-bottom: 0.2em;
+    color: rgba(47, 109, 67, 0.8);
+  }
+
+
+
+
+
+  /* butoanele de rasfoit articole inainte si inapoi */
+  .item-page .pager {
+    margin: 0; /* OVERRIDE BOOTSTRAP */
+    background-color: white;
+  }
+
+  .item-page div[itemprop="articleBody"] {
+    float: left;
+    padding: 0.5em;
+    /* setări generale */
+    column-count: 1;
+    column-rule-color:  rgba(255, 19, 1, 0.5);
+    column-rule-style:  solid;
+    column-rule-width:  0.1em;
+
+    /* MOZILLA */
+    -moz-column-count: 1;
+    -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
+    -moz-column-rule-style:  solid;
+    -moz-column-rule-width:  0.1em;
+
+    /* CHROME, SAFARI */
+    -webkit-column-count: 1;
+    -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
+    -webkit-column-rule-style: solid ;
+    -webkit-column-rule-width:  0.1em;
+  }
+/*}*/

@@ -1,0 +1,217 @@
+/*@media only screen and (min-width: 992px) {*/
+
+  /*.leading-0 {
+    padding: 0.5em;
+    -moz-column-count: 3;
+    -moz-column-gap: 1em;
+    -webkit-column-count: 3;
+    -webkit-column-gap : 1em;
+    -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
+    -moz-column-rule-style:  solid;
+    -moz-column-rule-width:  0.1em;
+    -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
+    -webkit-column-rule-style: solid ;
+    -webkit-column-rule-width:  0.1em;
+    clear: left;
+  }*/
+
+
+
+
+
+  
+
+  /* Stilizarea titlului categoriei si a descrierii */
+  .subheading-category {
+    display: block;
+    float: left;
+    padding: 0 1em;
+    background-color: rgba(147, 58, 63, 1);
+  }
+
+  .category-desc {
+    background-color: rgba(147, 58, 63, 1);
+  }
+
+  /*
+  STILIZAREA CONȚINUTULUI DIN BLOG-FEATURED
+  */
+
+  .item {
+    max-height: 33em;
+    margin-top: 1em;
+    padding: 0 0.5em 0.5em;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .row-fluid [class*="span"]:first-child {
+
+  }
+
+  .item:hover {
+    overflow: auto;
+  }
+
+  /*
+  * ARTICOL INDIVIDUAL ACCESAT
+  **/
+
+  /* Restrange continutul pe tot UA */
+  .item-page div[itemprop="articleBody"] {
+    float: left;
+    width: 100%;
+  }
+
+  /**
+  * STILIZARE TAGURI
+  */
+  .content-showtags a:link,
+  .content-showtags a:visited{
+    color: white;
+    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
+  }
+
+  /**
+  * PAGINAREA
+  */
+  .pagination {
+    text-align: center;
+  }
+
+  /**
+  * COUNTERUL PAGINILOR PARCURSE
+  */
+
+  .counter {
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  /**
+  * FORMATAREA SUBCATEGORIILOR AFISATE
+  * LA DESCHIDEREA UNEI SECTIUNI A SITEULUI
+  */
+  .cat-children {
+    float: left;
+  }
+
+  /* Formatare generala titlu */
+  .cat-children h3 {
+    color: white;
+    text-align: center;
+  }
+
+  .cat-children h3.page-header {
+    padding-left: 0.2em;
+    margin: 0;         /* OVERRIDE BOOTSTRAP */
+    border-bottom: 0;  /* OVERRIDE BOOTSTRAP */
+  }
+
+  .cat-children div {
+    display: inline-block;
+    float: left;
+    border-right: 0.5em solid rgba(47, 109, 67, 1);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-right: 0.3em;
+  }
+
+  .cat-children div > div {
+    width: 100%;
+    background-color: rgba(47, 109, 67, 1);
+    border: 0.2em solid rgba(255, 255, 255, 0.5);
+    padding: 0.3em 0 0.3em 0.3em;
+  }
+
+  .cat-children .last {
+    border-right: 0.3em solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cat-children span.badge {
+    font-size: x-large;      /* OVERRIDE BOOTSTRAP */
+    line-height: 100%;       /* OVERRIDE BOOTSTRAP */
+    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/; /* OVERRIDE BOOTSTRAP */
+    border-radius: 0;        /* OVERRIDE BOOTSTRAP */
+  }
+
+  /**
+  * FORMATARE DE LISTE DE CATEGORII CU
+  * SUBCATEGORII
+  */
+
+  .content-category h2 {
+    color: white;
+    text-align: center;
+  }
+
+  .categories-list > div {
+    width: 15em;
+    float: left;
+    margin: 0.3em;
+  }
+
+  .categories-list div h3 {
+    display: inline-block;
+    float: left;
+    border-right: 0.5em solid rgba(47, 109, 67, 1);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-right: 0.3em;
+  }
+
+  .categories-list div h3 {
+    padding-left: 0.3em;
+    margin: 0;         /* OVERRIDE BOOTSTRAP */
+    border-bottom: 0;  /* OVERRIDE BOOTSTRAP */
+  }
+
+  .categories-list span.badge {
+    font-size: x-large;      /* OVERRIDE BOOTSTRAP */
+    line-height: 100%;       /* OVERRIDE BOOTSTRAP */
+    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
+    border-radius: 0;        /* OVERRIDE BOOTSTRAP */
+  }
+
+  .categories-list h3 a:link,
+  .categories-list h3 a:visited {
+    color: white;
+  }
+
+  div.category-desc .first {
+    clear: both;
+  }
+
+  .categories-list div.category-desc,
+  .categories-list div.base-desc {
+    padding: 0.5em;
+  }
+
+  .categories-list div.base-desc {
+    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
+    width: 100%;
+  }
+
+  .categories-list div.category-desc {
+    float: left;
+    display: block;
+  }
+
+  .content-showtags a {
+    color: rgba(47, 109, 67, 1);
+  }
+
+  /* MODUL DE LOGIN PE ARTICOL INDIVIDUAL */
+  .loginmod {
+    float: left;
+    margin: 1em;
+  }
+
+  .loginmod label,
+  .userdata a:link {
+    color: white;
+  }
+
+  .controls .btn-primary {
+    background-color: rgba(47, 109, 67, 1);
+    background-image: linear-gradient(to bottom, rgba(156, 156, 109, 1), rgba(47, 109, 67, 1));
+  }
+/*}*/

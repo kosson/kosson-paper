@@ -1,25 +1,34 @@
-/*@media only screen and (min-width: 992px) {*/
+  /**
+   * leading-0
+   */
 
-  /*.leading-0 {
+  .leading-0 {
     padding: 0.5em;
+
+    column-count: 3;
+    column-gap: 1em;
+    column-rule-color:  rgba(255, 19, 1, 0.5);
+    column-rule-style:  solid;
+    column-rule-width:  0.1em;
+
     -moz-column-count: 3;
     -moz-column-gap: 1em;
-    -webkit-column-count: 3;
-    -webkit-column-gap : 1em;
     -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
     -moz-column-rule-style:  solid;
     -moz-column-rule-width:  0.1em;
+
+    -webkit-column-count: 3;
+    -webkit-column-gap : 1em;
     -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
     -webkit-column-rule-style: solid ;
     -webkit-column-rule-width:  0.1em;
-    clear: left;
-  }*/
+  }
 
 
 
 
 
-  
+
 
   /* Stilizarea titlului categoriei si a descrierii */
   .subheading-category {
@@ -130,7 +139,7 @@
   .cat-children span.badge {
     font-size: x-large;      /* OVERRIDE BOOTSTRAP */
     line-height: 100%;       /* OVERRIDE BOOTSTRAP */
-    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/; /* OVERRIDE BOOTSTRAP */
+    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA OVERRIDE BOOTSTRAP */
     border-radius: 0;        /* OVERRIDE BOOTSTRAP */
   }
 

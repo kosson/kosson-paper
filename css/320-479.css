@@ -4,21 +4,111 @@
     padding: 0;
   }
 
+  body {
+    padding: 0 0.2em; /*override la bootstrap-responsive.min [body]*/
+  }
 
-  /* and (max-width: 479px) */
-  /*.leading-0 {
+  main {
+    padding: 0.1em;
+  }
+
+  p {
+    white-space: pre-line;
+  }
+
+  #top {
+    padding-bottom: 0.5em;
+  }
+
+  #top img {
+    display: inline-block;
+    clear: both;
+  }
+
+  .form-search {
+    margin-top: -40%;
+  }
+
+  .articles {
+    width: auto;
+  }
+
+  .search {
+    display: block;
+  }
+
+  .label {
+    font-weight: normal;
+    text-shadow: none; /* override bootstrap*/
+  }
+
+  a.label:visited {
+    color: rgba(156, 156, 109, 1);
+  }
+
+  .label-info[href],
+  .label-info {
+    background-color: rgba(173, 101, 95, 1);
+  }
+
+  /*.leading-0 {*/
+  [class|="leading"] {
+    padding: 0 1em 1em;
+    background-color: white;
+
     column-count: 1;
     -moz-column-count: 1;
     -webkit-column-count: 1;
-  }*/
-
-  /*.leading-0,
-  .item {
-    font-size: small;
-  }*/
-
-  h2.item {
   }
+
+  /**
+   * HIDE HIDE, HIDE!
+   */
+  .icons,
+  dd.create,
+  .kmt-hits,
+  .hits span,
+  .parent-category-name,
+  .icon-calendar {
+    display: none;
+  }
+
+
+
+  /*
+  * TAGS
+  * .label, .badge sunt de la bootstrap și au nevoie de override
+  */
+  .label,
+  .badge,
+  .tags {
+    font-size: xx-small;
+  }
+
+  .tags {
+    width: 100%;
+  }
+
+  .items-leading ul.tags li:nth-child(n+4),
+  .items-row ul.tags li:nth-child(n+4) {
+    display: none;
+  }
+
+
+
+  /*
+  *  STILIZARE TEXT INTRODUCTIV
+  */
+  /*div.leading-0 p {
+    display: none;
+  }
+
+  div.leading-0 p:nth-child(-n+3) {
+    display:block;
+  }*/
+  /*div.leading-0 > p:nth-child(n+5) {
+    display: none;
+  }*/
 
   /*
   * Stilizarea leadingului
@@ -46,18 +136,8 @@
     color: white;
   }
 
-
-  #top img {
-    display: inline-block;
-    clear: both;
-  }
-
-  .search {
-    display: block;
-  }
-
   /*
-  * Stilizare article-info
+  * article-info
   */
   .article-info {
     width: 95%;
@@ -65,7 +145,7 @@
 
   .leading-0 .article-info,
   .items-row .article-info {
-    background-color: rgba(47, 109, 67, 0.2);
+    /*background-color: rgba(47, 109, 67, 0.2);*/
     padding: 0.5em;
     margin: 0.5em 0;
   }
@@ -75,14 +155,6 @@
     color: rgba(47, 109, 67, 1);
   }
 
-  /*
-  * Stilizare bloc informatie din leading-0
-  */
-  .parent-category-name,
-  .icon-calendar,
-  .hits {
-    display: none;
-  }
 
   .createdby,
   .category-name,
@@ -90,16 +162,33 @@
     color: rgba(147, 58, 63, 1);
     font-size: x-small;
     float: left;
-    margin: 0 auto;
-    margin-right: 0.5em;
+    /*margin: 0 auto;
+    margin-right: 0.5em;*/
   }
+
+  /**
+   * HITS
+   */
+  .hits {
+    float: right;
+    font-weight: bolder;
+    border: solid 1px green;
+    /*border-radius: 0.5em/0.5em;*/
+    border-radius: 50%;
+    padding: 0 0.2em;
+    background: hsla(0,0%,100%,.3);
+  }
+
 
   /*
   * Stilizare bloc informatie din .items-row
   */
 
+  .item {
+    margin-top: 0.5em;
+  }
+
   .leading-0 .create,
-  .leading-0 .hits,
   .leading-0 .createdby {
     color: black;
   }
@@ -122,12 +211,11 @@
   }
 
   dd.createdby,
-  .create,
-  .hits {
+  .create {
     color: black;
   }
 
-  /* Stilizare
+  /*
   * NEWSFLASH
   */
   .newsflash-horiz{
@@ -135,16 +223,27 @@
     font-weight: lighter;
   }
 
-  .newsflash-horiz > li {          /* li-urile */
+  div.moduletable.flashes {
+    width: 100%;
+  }
+
+  /**
+   * ELIMINĂ ORICE PARAGRAF AFIȘAT
+   */
+  ul.flashes li p {
+    display: none;
+  }
+
+  ul.flashes {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin: 2px auto;
+  }
+
+  .newsflash-horiz > li {
+
     background: white;
-    box-shadow: inset 0 0 2.5em rgba(156, 156, 109, 1), 0 0 0.3em white;
-
-    width: 15em;
-    vertical-align: top;
-    display: inline-block;
-
-    margin: 0.1em;
-    padding: 0 0.25em;
 
     font-size: x-small;
     line-height: 0.95em; /* rescriere bootstrap */
@@ -169,8 +268,12 @@
   }
 
 
-
-
+  /**
+   * Titlurile articolelor din items-row
+   */
+  .item h2.item-title {
+    font-size: 1.5em;
+  }
 
   /* butoanele de rasfoit articole inainte si inapoi */
   .item-page .pager {
@@ -199,4 +302,3 @@
     -webkit-column-rule-style: solid ;
     -webkit-column-rule-width:  0.1em;
   }
-/*}*/

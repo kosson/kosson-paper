@@ -1,19 +1,4 @@
 /**
-Roșu carmin aprins
-background: rgba(255, 19, 1, 1);
-
-Rosu carmin stins
-background: rgba(239, 72, 55, 1);
-
-Galben pai
-background: rgba(255, 255, 0, 1);
-
-Ocru
-background: rgba(255, 102, 0, 1);
-
-Maro
-background: rgba(128, 51, 0, 1);
-
 Verde
 background: rgba(47, 109, 67, 1);
 #2F6D43
@@ -34,13 +19,29 @@ background: rgba(147, 58, 63, 1);
 }
 
 html {
-    background-color: black;
+  background-color: black;
 }
 
+/* BOOTSTRAP OVERIDES */
 body {
   background-color: transparent; /* override bootstrap */
 }
 
+h1 {
+  font-size: 1em;       /* override bootstrap */
+  line-height: normal;  /* override bootstrap */
+  margin: 0;            /* OVERRIDE BOOTSTRAP */
+}
+
+h2 {
+  font-size: 0.95em;       /* override bootstrap */
+  line-height: normal;  /* override bootstrap */
+  margin: 0;            /* OVERRIDE BOOTSTRAP */
+}
+
+dl {
+  margin: 0; /* override bootstrap */
+}
 
 /* Stilizarea elementelor generale */
 a {
@@ -51,20 +52,18 @@ a:hover,
 a:active,
 a:visited {
   text-decoration: none;
-  color: rgba(147, 58, 63, 1); /* Touch of Marsala
- */
-}
-
-
-dl {
-  margin: 0; /* override bootstrap */
+  color: rgba(147, 58, 63, 1); /* Touch of Marsala */
 }
 
 form {
   margin: 0;
 }
 
-
+/* BOOTSTRAP OVERIDES CLASSES */
+.page-header {
+  margin: 0;
+  padding: 0;
+}
 
 
 /* ZONA DE STILIZARE COMUNĂ INDIFERENT DE MEDIA */
@@ -82,14 +81,13 @@ header {
   background-size: cover;
 
   text-align: center;
-  padding: 6em 0 2em;
+  padding: 4em 0 0.2em;
 
-  /*  box-shadow: 0 1em 1em -1em rgba(0, 0, 0, 0.9);*/
   box-shadow: inset 0.2em 0 2em 0.5em black;
 }
 
 main {
-  padding: 1em;
+  /*padding: 1em;*/
   background-color: rgba(47, 109, 67, 1);
 }
 
@@ -124,12 +122,14 @@ main {
   margin: 0 auto;
 }
 
-
-/* NAVIGARE */
-
 /*
 * NAVIGARE - BOOTSTRAP 3 OVERRIDES
 */
+.navbar-inner {
+text-align:center;
+margin: 0 auto;
+}
+
 .navbar {
   margin-bottom: 0; /* override bootstrap */
   background-color: transparent; /* override bootstrap */
@@ -183,23 +183,18 @@ main {
 */
 .newsflash-horiz{
   padding: 0;
-  font-weight: lighter;
 }
 
 .newsflash-horiz > li {          /* li-urile */
   background: white;
   box-shadow: inset 0 0 2.5em rgba(156, 156, 109, 1), 0 0 0.3em white;
 
-  width: 20em;
+  /*width: 20em;*/
   vertical-align: top;
   display: inline-block;
 
   margin: 0.2em;
   padding: 0 0.5em;
-
-  font-size: small;
-  line-height: 0.95em; /* rescriere bootstrap */
-  text-align: center;
 
   /* For IE 7 */
   zoom: 1;
@@ -227,51 +222,281 @@ main {
 
 /**
 * ELEMENTE COMUNE PENTRU TOATE CAZURILE
-* - leading
-* - blog-featured
 */
 
-[class*="leading"]{
-  background-color: white;
-}
+/**
+* ARTICOLELE PER GLOBAL
+*/
 
-.item {
-  background-color: white;
-}
-
+/* Setarea felului in care arata articolele per global */
+/*[class*="leading"],*/
 .item,
-.items-leading {
+.item-page {
+  background-color: white;
   padding: 0 1em 1em;
-}
-
-.item,
-.items-leading {
-  border-bottom: solid 1em rgba(47, 109, 67, 1);
 }
 
 /**
 * TITLURI ARTICOLE DIN
 * - .item .item-title pentru HOMEPAGE
-* - .page-header > h2 pentru paginare blog in SECTIUNI
+* - .page-header > h2 pentru paginare blog in SECTIUNI*/
 */
 
 /*
 Titlul articolului la afisarea in pagina principala
 - va fi suprascris pentru titlurile articolelor afisate individual
 */
-.item .item-title,
+
+/*.item .item-title,
 .page-header > h2 {
-  display: inline-block;
+  text-align: center;
   padding: 0 0.2em 0.5em;
   border-bottom: 0.05em dashed rgba(255, 19, 1, 0.6);
   font-variant: all-petite-caps;
-  font-size: 1.5em;
+  font-size: 2em;
   line-height: 0.95em;
-}
+}*/
+
 
 /* ARTICOLE CA LISTE ALE SUBCATEGORIILOR */
 .items-row .item {
   padding: 0 1em 1em;
+}
+
+/* CATEGORIE SI TITLU */
+
+/* NUME CATEGORIE IN CARE SE AFLA ARTICOLUL */
+.item-page .page-header h1,
+.blog .page-header h1 {
+  color: white;
+  font-size: large;
+  display: inline-block;
+  background-color: rgba(47, 109, 67, 1);
+  padding: 0.4em;
+  border-radius: 0 0 .5em .5em;
+}
+
+/*
+* Titlul articolului individual accesat
+* suprascrie setarile de la afisarea articolelor
+* din pagina principala
+*/
+.item-page h2 {
+  /*color: white;*/
+  border-bottom: 0;
+  font-variant: none;
+  /*font-size: 2.5em;*/ /*Afecteaza afisarea la dimensiuni mici*/
+  line-height: 0.95em;
+  padding: 0.5em;
+}
+
+.page-header h2{
+  color: white;
+}
+
+/* Titlul articolului */
+.item-page .page-header h2,
+.blog .subheading-category h2 {
+  background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
+}
+
+.item-page .page-header h2>a:link,
+.item-page .page-header h2>a:visited,
+.subheading-category,
+.category-desc,   /* Stilizarea textului descrierii secțiunii */
+.category-desc p {
+  color: white;
+}
+
+/**
+* CARTUS INFO LA ARTICOL
+*/
+
+/* SETARI GENERALE */
+.article-info {
+  display: inline-block;
+  border-bottom: 0.05em dashed rgba(255, 19, 1, 0.6);
+}
+
+/*
+* Articole prima pagina
+* Articol leading-0
+* Articole items-row
+*/
+
+.leading-0 .article-info,
+.items-row .article-info {
+  float:left;
+}
+
+.leading-0 .article-info {
+  color: black;
+  padding: 1em;
+}
+
+.article-info-term{
+  display: none;
+}
+
+/*
+* LEADING-0
+*/
+
+/*
+* Stilizarea primului articol care apare pe home
+* Articol pe trei coloane
+**/
+
+/*.leading-0 {
+
+}*/
+
+
+/* TITLURI */
+.leading-0 h2.item-title{
+  font-size: 2em;
+}
+
+
+.leading-0 .createdby a:link,
+.leading-0 .parent-category-name a:link,
+.leading-0 .category-name a:link {
+  color: rgba(47, 109, 67, 1);
+}
+
+.leading-0 .parent-category-name a:visited,
+.leading-0 .category-name a:visited {
+  color: rgba(156, 156, 109, 1);
+}
+
+.leading-0 .parent-category-name a:hover,
+.leading-0 .category-name a:hover {
+  color: rgba(255, 19, 1, 0.5);
+}
+
+.leading-0 .createdby,
+.leading-0 .create,
+.leading-0 .hits {
+  color: rgba(47, 109, 67, 1);
+}
+
+/*
+*  STILIZARE TITLU
+*/
+*
+.leading-0 h2.item-title {
+  background-color: black;
+  line-height: 1.7em;
+  display: block;
+  padding: inherit;
+  text-align: center;
+}
+
+.leading-0 h2.item-title a {
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+
+
+.article-info {
+  margin: 1em 1em 0 0;
+}
+
+/*
+* Stilizare bloc informatie din .items-row
+*/
+.createdby a:link,
+.parent-category-name a:link,
+.category-name a:link {
+  color: rgba(47, 109, 67, 1);
+}
+.parent-category-name a:visited,
+.category-name a:visited {
+  color: rgba(156, 156, 109, 1);
+}
+.parent-category-name a:hover,
+.category-name a:hover {
+  color: rgba(255, 19, 1, 0.5);
+}
+
+.createdby,
+.create,
+.hits {
+  color: rgba(47, 109, 67, 1);
+}
+
+
+
+
+
+
+
+
+
+/**
+* FORMATAREA CONTINUT ARTICOL
+* continutul articolului nu are o clasa sau un id
+* poate fi identificat doar dupa atributul Schema.org
+*/
+
+/*
+* Extinde continutul pe tot UA
+* Restrange per media query
+*/
+/*.item-page div[itemprop="articleBody"]{
+  padding: 1.5em 1.5em 1.5em 1.5em;
+}*/
+
+.item-page div[itemprop="articleBody"] {
+  padding: 1.5em;
+
+  /* setări generale */
+  column-count: 3;
+  column-gap: 1em;
+  column-rule-color:  rgba(255, 19, 1, 0.5);
+  column-rule-style:  solid;
+  column-rule-width:  0.1em;
+
+  /* MOZILLA */
+  -moz-column-count: 3; /* Articol pe trei coloane */
+  -moz-column-gap: 1em;
+  -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
+  -moz-column-rule-style:  solid;
+  -moz-column-rule-width:  0.1em;
+
+  /* CHROME, SAFARI */
+  -webkit-column-count: 3;
+  -webkit-column-gap : 1em;
+  -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
+  -webkit-column-rule-style: solid ;
+  -webkit-column-rule-width:  0.1em;
+}
+
+/* butoanele de rasfoit articole inainte si inapoi */
+.item-page .pager {
+  margin: 0; /* OVERRIDE BOOTSTRAP */
+  float: left;
+  max-width: 25em;
+  min-width: 15em;
+  background-color: white;
+}
+
+.item-page .pager:after {
+  clear: none; /* OVERRIDE BOOTSTRAP */
+}
+
+.item-page .pager li > a,
+.item-page .pager li > span {
+  border-radius: 0;   /* OVERRIDE BOOTSTRAP */
+  border: none;       /* OVERRIDE BOOTSTRAP */
+}
+
+/* TAGURI */
+.tags {
+  display: block;
+  float: left;
 }
 
 /**
@@ -312,7 +537,7 @@ Titlul articolului la afisarea in pagina principala
 #categorylist_header_hits a:link,
 .cat-list-row1 a:link,
 .cat-list-row1 a:visited{
-  color:white;
+  color: white;
 }
 
 .cat-list-row1 a:hover {
@@ -324,547 +549,29 @@ Titlul articolului la afisarea in pagina principala
   background-color: rgba(173, 101, 95, 0.8); /* Marsala */
 }
 
-
-
-/*
-Large Devices, .visible-lg-*
-De la XSVGA+ până la 4K
+/* KOMENTO
+* COMENTARII
 */
-@media (min-width: 1200px) {
 
-  /* Stilizarea titlului categoriei si a descrierii */
-  .subheading-category {
-    display: block;
-    float: left;
-    padding: 0 1em;
-    background-color: rgba(147, 58, 63, 1);
-  }
-
-  .category-desc {
-    background-color: rgba(147, 58, 63, 1);
-  }
-
-  /*
-  STILIZAREA CONȚINUTULUI DIN BLOG-FEATURED
-  */
-
-  .item {
-    max-height: 33em;
-    margin-top: 1em;
-    padding: 0 0.5em 0.5em;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-
-  .row-fluid [class*="span"]:first-child {
-
-  }
-
-  .item:hover {
-    overflow: auto;
-  }
-
-  /*
-  * Stilizarea primului articol care apare pe prima pagină
-  **/
-
-  .leading-0 {
-    padding: 0.5em;
-
-    /* setări generale */
-    column-count: 3;
-    column-gap: 1em;
-    column-rule-color:  rgba(255, 19, 1, 0.5);
-    column-rule-style:  solid;
-    column-rule-width:  0.1em;
-
-    /* MOZILLA */
-    -moz-column-count: 3; /* Articol pe trei coloane */
-    -moz-column-gap: 1em;
-    -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
-    -moz-column-rule-style:  solid;
-    -moz-column-rule-width:  0.1em;
-
-    /* CHROME, SAFARI */
-    -webkit-column-count: 3;
-    -webkit-column-gap : 1em;
-    -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
-    -webkit-column-rule-style: solid ;
-    -webkit-column-rule-width:  0.1em;
-  }
-
-  .leading-0 h2.item-title {
-    position: relative;
-    background-color: black;
-  }
-
-  /* Setarea unei letrine */
-  .leading-0 h2.item-title:first-letter {
-    display: block;
-    float: left;
-    font-size: 5em;
-    padding: 0.2em 0 0.3em 0;
-    background-color: black;
-  }
-
-  .leading-0 h2.item-title a {
-    font-weight: lighter;
-    color: rgba(255, 255, 255, 1);
-    text-decoration: none;
-  }
-
-  /* Stilizarea textului din primul articol din seria de pe homepage */
-  .leading-0 > p {
-    line-height: 1.7em;
-    font: 2em 'Ubuntu', 'Ubuntu Light', sans-serif, 'Verdana';
-  }
-
-  /*
-  * ARTICOL INDIVIDUAL ACCESAT
-  **/
-
-  /*
-  Titlul articolului individual accesat
-  - suprascrie setarile de la afisarea articolelor din prima pagina
-  */
-  .item-page h2 {
-    color: white;
-    border-bottom: 0;
-    font-variant: none;
-    font-size: 2.5em;
-    line-height: 0.95em;
-    padding: 0.5em;
-  }
-
-  .item-page {
-    height: 100%;
-  }
-
-  .item-page .page-header {
-    /* text-align: center; */
-  }
-
-  /* butoanele de rasfoit articole inainte si inapoi */
-  .item-page .pager {
-    margin: 0; /* OVERRIDE BOOTSTRAP */
-    float: left;
-    max-width: 25em;
-    min-width: 15em;
-    background-color: white;
-  }
-
-  .item-page .pager:after {
-    clear: none; /* OVERRIDE BOOTSTRAP */
-  }
-
-  .item-page .pager li > a,
-  .item-page .pager li > span {
-    border-radius: 0;   /* OVERRIDE BOOTSTRAP */
-    border: none;       /* OVERRIDE BOOTSTRAP */
-  }
-
-  /* NUME CATEGORIE IN CARE SE AFLA ARTICOLUL */
-  .item-page .page-header h1,
-  .blog .page-header h1 {
-    color: white;
-    display: inline-block;
-    float: right;
-    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
-    margin: 0.4em 0; /* OVERRIDE BOOTSTRAP */
-    padding: 0 0.2em;
-  }
-
-  /* Titlul articolului */
-  .item-page .page-header h2,
-  .blog .subheading-category h2 {
-    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
-  }
-
-  .item-page .page-header h2>a:link,
-  .item-page .page-header h2>a:visited,
-  .subheading-category {
-    color: white;
-  }
-
-  /* Stilizarea textului descrierii secțiunii */
-  .category-desc,
-  .category-desc p {
-    color: white;
-  }
-
-  /**
-  * CARTUS INFO LA ARTICOL
-  */
-  .article-info {
-    float: left;
-    margin: 1em;
-    background-color: white;
-    color: rgba(156, 156, 109, 1);
-    max-width: 70em;
-  }
-
-  .article-info-term{
-    display: none;
-  }
-
-  /**
-  * FORMATAREA CONTINUT ARTICOL
-  */
-
-  .item-page div[itemprop="articleBody"]{
-    background-color: white;
-    float: left;
-    max-width: 70em;
-    padding: 1.5em 1.5em 1.5em 4em;
-  }
-
-  .item-page .createdby,
-  .item-page .article-info-term,
-  .item-page .parent-category-name,
-  .item-page .category-name {
-    float: none;
-  }
-
-  /**
-  * INFORMATIILE PRIVIND ARTICOLELE
-  */
-
-  .createdby,
-  .create {
-    float: left;
-  }
-
-  .createdby a:link {
-    color: rgba(47, 109, 67, 1);
-  }
-
-  .createdby a:hover {
-    color: white;
-    background-color: rgba(47, 109, 67, 1);
-    text-decoration: none;
-  }
-
-  .hits {
-    font-weight: bold;
-    color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
-  }
-
-  /**
-  * STILIZARE TAGURI
-  */
-  .content-showtags a:link,
-  .content-showtags a:visited{
-    color: white;
-    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
-  }
-
-  /**
-  * PAGINAREA
-  */
-  .pagination {
-    text-align: center;
-  }
-
-  /**
-  * COUNTERUL PAGINILOR PARCURSE
-  */
-
-  .counter {
-    font-weight: lighter;
-    color: rgba(255, 255, 255, 1);
-  }
-
-  /**
-  * FORMATAREA SUBCATEGORIILOR AFISATE
-  * LA DESCHIDEREA UNEI SECTIUNI A SITEULUI
-  */
-  .cat-children {
-    float: left;
-  }
-
-  /* Formatare generala titlu */
-  .cat-children h3 {
-    color: white;
-    text-align: center;
-  }
-
-  .cat-children h3.page-header {
-    padding-left: 0.2em;
-    margin: 0;         /* OVERRIDE BOOTSTRAP */
-    border-bottom: 0;  /* OVERRIDE BOOTSTRAP */
-  }
-
-  .cat-children div {
-    display: inline-block;
-    float: left;
-    border-right: 0.5em solid rgba(47, 109, 67, 1);
-    background-color: rgba(255, 255, 255, 0.5);
-    padding-right: 0.3em;
-  }
-
-  .cat-children div > div {
-    width: 100%;
-    background-color: rgba(47, 109, 67, 1);
-    border: 0.2em solid rgba(255, 255, 255, 0.5);
-    padding: 0.3em 0 0.3em 0.3em;
-  }
-
-  .cat-children .last {
-    border-right: 0.3em solid rgba(255, 255, 255, 0.1);
-  }
-
-  .cat-children span.badge {
-    font-size: x-large;      /* OVERRIDE BOOTSTRAP */
-    line-height: 100%;       /* OVERRIDE BOOTSTRAP */
-    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/; /* OVERRIDE BOOTSTRAP */
-    border-radius: 0;        /* OVERRIDE BOOTSTRAP */
-  }
-
-  /**
-  * FORMATARE DE LISTE DE CATEGORII CU
-  * SUBCATEGORII
-  */
-
-  .content-category h2 {
-    color: white;
-    text-align: center;
-  }
-
-  .categories-list > div {
-    width: 15em;
-    float: left;
-    margin: 0.3em;
-  }
-
-  .categories-list div h3 {
-    display: inline-block;
-    float: left;
-    border-right: 0.5em solid rgba(47, 109, 67, 1);
-    background-color: rgba(255, 255, 255, 0.5);
-    padding-right: 0.3em;
-  }
-
-  .categories-list div h3 {
-    padding-left: 0.3em;
-    margin: 0;         /* OVERRIDE BOOTSTRAP */
-    border-bottom: 0;  /* OVERRIDE BOOTSTRAP */
-  }
-
-  .categories-list span.badge {
-    font-size: x-large;      /* OVERRIDE BOOTSTRAP */
-    line-height: 100%;       /* OVERRIDE BOOTSTRAP */
-    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
-    border-radius: 0;        /* OVERRIDE BOOTSTRAP */
-  }
-
-  .categories-list h3 a:link,
-  .categories-list h3 a:visited {
-    color: white;
-  }
-
-  div.category-desc .first {
-    clear: both;
-  }
-
-  .categories-list div.category-desc,
-  .categories-list div.base-desc {
-    padding: 0.5em;
-  }
-
-  .categories-list div.base-desc {
-    background-color: rgba(147, 58, 63, 1); /* Touch of MARSALA*/
-    width: 100%;
-  }
-
-  .categories-list div.category-desc {
-    float: left;
-    display: block;
-  }
-
-
-  /* COMENTARII */
-
-  #section-kmt {
-    max-width: 25em;
-  }
-
-  .kmt-form-area {
-    border-left: 0.5em;
-    float: left;
-    margin-top: 1em;
-    background-color: rgba(255, 255, 255, 0.25);
-    padding-right: 0.5em;
-  }
-
-  .kmt-login-footer {
-    float: left;
-    color: white;
-    border-bottom: 0;
-  }
-
-
-
-  /* TAGURI */
-
-  .tags .inline {
-    float: left;
-  }
-
-  .content-showtags a {
-    color: rgba(47, 109, 67, 1);
-  }
-
-  /* MODUL DE LOGIN PE ARTICOL INDIVIDUAL */
-  .loginmod {
-    float: left;
-    margin: 1em;
-  }
-
-  .loginmod label,
-  .userdata a:link {
-    color: white;
-  }
-
-  .controls .btn-primary {
-    background-color: rgba(47, 109, 67, 1);
-    background-image: linear-gradient(to bottom, rgba(156, 156, 109, 1), rgba(47, 109, 67, 1));
-  }
+#section-kmt {
+  clear: both;
+  display: block;
 }
 
-
-/* Extra Small Devices, .visible-xs-*
-*  Mobile portrait (320x480)
-*  Mobile landscape (480x320)
-*/
-@media (max-width: 767px) {
-
-  .leading-0 {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-  }
-
-
-  .leading-0 h2.item-title {
-    border-bottom: 0.05em dashed rgba(255, 19, 1, 0.6);
-    font-variant: all-petite-caps;
-    font-size: 1.5em;
-    line-height: 0.95em;
-  }
-
-  .item .item-title {
-    width: 100%;
-  }
-
-  .item-page .article-info {
-    background-color: white;
-    display: block;
-    margin: 1em;
-  }
-
-  .item-page .createdby,
-  .item-page .article-info-term,
-  .item-page .parent-category-name,
-  .item-page .category-name {
-    float: left;
-  }
-
-  /* butoanele de rasfoit articole inainte si inapoi */
-  .item-page .pager {
-    margin: 0; /* OVERRIDE BOOTSTRAP */
-    background-color: white;
-  }
-}
-
-
-/*
-Small Devices, .visible-sm-* -> echivalent BOOTSTRAP
-Small tablet portrait (600x800)
-Small tablet landscape (800x600)
-*/
-@media (min-width: 768px) and (max-width: 991px) {
-
-  /* ARTICOLUL DIN LEADING PE 2 COLOANE */
-  .leading-0 {
-    padding: 0.5em;
-    -moz-column-count: 2;
-    -moz-column-gap: 1em;
-    -webkit-column-count: 2;
-    -webkit-column-gap : 1em;
-    -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
-    -moz-column-rule-style:  solid;
-    -moz-column-rule-width:  0.1em;
-    -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
-    -webkit-column-rule-style: solid ;
-    -webkit-column-rule-width:  0.1em;
-    clear: left;
-  }
-
-  .leading-0 h2.item-title {
-    border-bottom: 0.05em dashed rgba(255, 19, 1, 0.6);
-    font-variant: all-petite-caps;
-    font-size: 1.5em;
-    line-height: 0.95em;
-  }
-}
-
-
-
-
-
-
-
-
-/*
-Medium Devices, .visible-md-* -> echivalent BOOTSTRAP
-Tablet portrait (768x1024)
-*/
-@media (min-width: 992px) and (max-width: 1199px) {
-
-  .leading-0 {
-    padding: 0.5em;
-    -moz-column-count: 2;
-    -moz-column-gap: 1em;
-    -webkit-column-count: 2;
-    -webkit-column-gap : 1em;
-    -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
-    -moz-column-rule-style:  solid;
-    -moz-column-rule-width:  0.1em;
-    -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
-    -webkit-column-rule-style: solid ;
-    -webkit-column-rule-width:  0.1em;
-    clear: left;
-  }
-
-  /* butoanele de rasfoit articole inainte si inapoi */
-  .item-page .pager {
-    margin: 0; /* OVERRIDE BOOTSTRAP */
-    background-color: white;
-  }
-
+.kmt-login {
 
 }
 
-
-
-
-
-/*
-* Țintește telefoanele Apple care nu au capabilități retina.
-*/
-
-@media only screen (min-device-width: 640px) and
-not (-webkit-min-device-pixel-ratio: 2) {
-  /* stylesheet for non-high density phone goes here */
+.kmt-form-area {
+  border-left: 0.5em;
+  float: left;
+  margin-top: 1em;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding-right: 0.5em;
 }
 
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2)
-and (min-width: 320px),
-only screen and (min--moz-device-pixel-ratio: 2)
-and (min-width: 320px),
-only screen and (-o-min-device-pixel-ratio: 2/1)
-and (min-width: 320px),
-only screen and (min-device-pixel-ratio: 2)
-and (min-width: 320px) {
-  /* Small screen retina/amoled styles */
+.kmt-login-footer {
+  float: left;
+  color: white;
+  border-bottom: 0;
 }

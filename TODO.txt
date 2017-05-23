@@ -1,0 +1,1 @@
+1. Adauga modulele de Primary structures la noul modul infostructures care se afla un footer

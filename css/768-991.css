@@ -1,0 +1,105 @@
+/*@media only screen and (max-width: 768px) {*/
+
+  /*
+
+  /*
+  * Stilizarea primului articol care apare pe prima pagină
+  * Stilizare articole deschise
+  **/
+
+  .leading-0 {
+    padding: 0.5em;
+
+    column-count: 3;
+    column-gap: 1em;
+    column-rule-color:  rgba(255, 19, 1, 0.5);
+    column-rule-style:  solid;
+    column-rule-width:  0.1em;
+
+    -moz-column-count: 3;
+    -moz-column-gap: 1em;
+    -moz-column-rule-color:  rgba(255, 19, 1, 0.5);
+    -moz-column-rule-style:  solid;
+    -moz-column-rule-width:  0.1em;
+
+    -webkit-column-count: 3;
+    -webkit-column-gap : 1em;
+    -webkit-column-rule-color:  rgba(255, 19, 1, 0.5);
+    -webkit-column-rule-style: solid ;
+    -webkit-column-rule-width:  0.1em;
+  }
+
+  .newsflash-horiz > li {
+    width: 10em;
+  }
+
+  /*
+  * NEWSFLASH
+  */
+  /**
+   * ELIMINĂ ORICE PARAGRAF AFIȘAT
+   */
+
+  /*line-height este 0.95 x 3*/
+  /*ul.flashes li p {
+    display: block;
+    height: 2.85em;
+    overflow: hidden;
+  }*/
+
+  .form-search {
+    margin-top: -15%;
+  }
+
+  /*ul.flashes li {
+    width: auto;
+  }*/
+
+  /*pentru ca in 320-479 este hide, trebui afișată mai întâi*/
+  /*ul.flashes li p {
+    display: block;
+  }*/
+
+  /*ul.flashes li > p:nth-child(n+1){*/
+  ul.flashes li > p:first-of-type {
+    display: block;
+  }
+
+
+  ul.flashes li {
+    /*color: red;*/
+    /*height: 17.1em;
+    overflow: hidden;*/
+  }​
+
+  /*ul.flashes li a {
+    display: none;
+  }*/
+
+  .form-search {
+    margin-top: -10%;
+  }
+
+  ul.flashes {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    margin: 2px auto;
+  }
+
+  .item-page div[itemprop="articleBody"] {
+    column-count: 1;
+  }
+
+  /* butoanele de rasfoit articole inainte si inapoi */
+  .item-page .pager {
+    margin: 0; /* OVERRIDE BOOTSTRAP */
+    background-color: white;
+  }
+
+  .item-page div[itemprop="articleBody"] {
+
+  }
+
+
+/*}*/

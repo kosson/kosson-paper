@@ -1,0 +1,4 @@
+<!-- Dependința Leaflet.markercluster -->
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/javascript/leaflet/markercluster/MarkerCluster.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/javascript/leaflet/markercluster/MarkerCluster.Default.css" type="text/css" />
+<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/javascript/leaflet/markercluster/leaflet.markercluster-src.js"></script>

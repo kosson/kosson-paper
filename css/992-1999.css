@@ -24,7 +24,9 @@
     -webkit-column-rule-width:  0.1em;
   }
 
-
+  ul.flashes li {
+    width: 15em;
+  }
 
 
 

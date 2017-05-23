@@ -183,7 +183,6 @@ margin: 0 auto;
 */
 .newsflash-horiz{
   padding: 0;
-  font-weight: lighter;
 }
 
 .newsflash-horiz > li {          /* li-urile */
@@ -196,10 +195,6 @@ margin: 0 auto;
 
   margin: 0.2em;
   padding: 0 0.5em;
-
-  font-size: small;
-  line-height: 0.95em; /* rescriere bootstrap */
-  text-align: center;
 
   /* For IE 7 */
   zoom: 1;
@@ -290,7 +285,7 @@ Titlul articolului la afisarea in pagina principala
   /*color: white;*/
   border-bottom: 0;
   font-variant: none;
-  font-size: 2.5em;
+  /*font-size: 2.5em;*/ /*Afecteaza afisarea la dimensiuni mici*/
   line-height: 0.95em;
   padding: 0.5em;
 }

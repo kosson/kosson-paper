@@ -29,6 +29,63 @@
     -webkit-column-rule-width:  0.1em;
   }
 
+  .newsflash-horiz > li {
+    width: 10em;
+  }
+
+  /*
+  * NEWSFLASH
+  */
+  /**
+   * ELIMINĂ ORICE PARAGRAF AFIȘAT
+   */
+
+  /*line-height este 0.95 x 3*/
+  /*ul.flashes li p {
+    display: block;
+    height: 2.85em;
+    overflow: hidden;
+  }*/
+
+  .form-search {
+    margin-top: -15%;
+  }
+
+  /*ul.flashes li {
+    width: auto;
+  }*/
+
+  /*pentru ca in 320-479 este hide, trebui afișată mai întâi*/
+  /*ul.flashes li p {
+    display: block;
+  }*/
+
+  /*ul.flashes li > p:nth-child(n+1){*/
+  ul.flashes li > p:first-of-type {
+    display: block;
+  }
+
+
+  ul.flashes li {
+    /*color: red;*/
+    /*height: 17.1em;
+    overflow: hidden;*/
+  }​
+
+  /*ul.flashes li a {
+    display: none;
+  }*/
+
+  .form-search {
+    margin-top: -10%;
+  }
+
+  ul.flashes {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    margin: 2px auto;
+  }
 
   .item-page div[itemprop="articleBody"] {
     column-count: 1;

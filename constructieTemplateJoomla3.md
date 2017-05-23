@@ -17,32 +17,32 @@ Câteva informații orientative se pot găsi și [pe pagina dedicată acestui fi
 ```html
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="template">
-        <name>kosson-paper</name>
-        <creationDate>2014-11-29</creationDate>
-        <author>Nicolaie Constantinescu</author>
-        <authorEmail>kosson@gmail.com</authorEmail>
-        <authorUrl>http://www.kosson.ro</authorUrl>
-        <copyright>Nicolaie Constantinescu</copyright>
-        <license>CC-BY</license>
-        <version>1.0.0</version>
-        <description>Un template modern pentru noul Kosson</description>
-        <files>
-                <filename>index.php</filename>
-                <filename>templateDetails.xml</filename>
-                <folder>images</folder>
-                <folder>css</folder>
-        </files>
-        <positions>
-                <position>breadcrumb</position>
-                <position>left</position>
-                <position>right</position>
-                <position>top</position>
-                <position>user1</position>
-                <position>user2</position>
-                <position>user3</position>
-                <position>user4</position>
-                <position>footer</position>
-        </positions>
+  <name>kosson-paper</name>
+  <creationDate>2014-11-29</creationDate>
+  <author>Nicolaie Constantinescu</author>
+  <authorEmail>kosson@gmail.com</authorEmail>
+  <authorUrl>http://www.kosson.ro</authorUrl>
+  <copyright>Nicolaie Constantinescu</copyright>
+  <license>CC-BY</license>
+  <version>1.0.0</version>
+  <description>Un template modern pentru noul Kosson</description>
+  <files>
+    <filename>index.php</filename>
+    <filename>templateDetails.xml</filename>
+    <folder>images</folder>
+    <folder>css</folder>
+  </files>
+  <positions>
+    <position>breadcrumb</position>
+    <position>left</position>
+    <position>right</position>
+    <position>top</position>
+    <position>user1</position>
+    <position>user2</position>
+    <position>user3</position>
+    <position>user4</position>
+    <position>footer</position>
+  </positions>
 </extension>
 ```
 
@@ -294,60 +294,39 @@ Multi Column Order | Down
 
 **Content->Article Manager->Options->Blog / Featured Layouts**
 
-Ceea ce s-a urmărit prin aceste setări este să ai un articol mare ăn prezentare și alte 9 care să prezinte continuitatea de publicare. În concluzie 10 articole „featured" pe prima pagină.
+Ceea ce s-a urmărit prin aceste setări este să ai un articol mare în prezentare și alte 9 care să prezinte continuitatea de publicare. În concluzie 10 articole „featured" pe prima pagină.
 
-- `div` **.blog-featured** `itemtype="http://schema.org/Blog" itemscope=""`
-
-  - `div` **.items-leading .clearfix**
-
-    - `div` **.leading-0 .clearfix** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
-
-      - `h2` **.item-title** `itemprop="name"`
-      - `dl` **.article-info .muted**
-
-        - `dt` **.article-info-term**
-        - `dd` **.createdby**
-
-    - `div` **.items-row .cols-3 .row-0 .row-fluid**
-
+* `div` **.blog-featured** `itemtype="http://schema.org/Blog"` `itemscope=""`
+  * `div` **.items-leading .clearfix**
+    * `div` **.leading-0 .clearfix** `itemtype="http://schema.org/BlogPosting"` `itemscope=""` `itemprop="blogPost"`
+      * `h2` **.item-title** `itemprop="name"`
+      * `dl` **.article-info .muted**
+        * `dt` **.article-info-term**
+        * `dd` **.createdby**
+    * `div` **.items-row .cols-3 .row-0 .row-fluid**
+      * `div` **.item .column-1 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
+      * `div` **.item .column-2 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
+      * `div` **.item .column-3 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
+    * `div` **.items-row .cols-3 .row-1 .row-fluid**
       - `div` **.item .column-1 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
       - `div` **.item .column-2 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
       - `div` **.item .column-3 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
-
-    - `div` **.items-row .cols-3 .row-1 .row-fluid**
-
+    * `div` **.items-row .cols-3 .row-2 .row-fluid**
       - `div` **.item .column-1 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
       - `div` **.item .column-2 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
-      - `div` **.item .column-3 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
-
-    - `div` **.items-row .cols-3 .row-2 .row-fluid**
-
-      - `div` **.item .column-1 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
-      - `div` **.item .column-2 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
-      - `div` **.item .column-3 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"`
-
-    - `div` **.pagination**
-
-      - `p` **.counter .pull-right**
-      - `ul`
-
-        - `li` **.pagination-start**
-
-          - `span` **.pagenav** **_Start_**
-
+      - `div` **.item .column-3 .span4** `itemtype="http://schema.org/BlogPosting" itemscope="" itemprop="blogPost"
+    * `div` **.pagination**
+      * `p` **.counter .pull-right**
+      * `ul`
+        * `li` **.pagination-start**
+          * `span` **.pagenav** ***Start***
         - `li` **.pagination-prev**
-
           - `span` **.pagenav** **_Prec_**
-
         - `li`
           - `span` **.pagenav** "1"
-
         - `li`
-
           - `a` **.pagenav** href="/WEB/kosson/index.php?limitstart=11\⟨=ro" "2"
-
         - `li`
-
           - `a` **.pagenav** href="/WEB/kosson/index.php?limitstart=22\⟨=ro" "3"
 
         - `li`
@@ -427,7 +406,7 @@ _`section` **.articles .container-fluid**_`div` **.item-page** `itemtype="http:/
 
   - `dl` **.article-info**
 
-- `ul` **.tags .inline** _`li` **.tag2 .tag-list0** `itemprop="keywords"`_`a` **.label .label-info** `href="/radacina-site/selecteaza-toate-articolele-cu-acelasi-tag"` _`li` **.tag3 .tag-list1** `` `itemprop="keywords"``_`a` **.label .label-info** `href="/radacina-site/selecteaza-toate-articolele-cu-acelasi-tag"` *`div itemprop="articleBody"`
+- `ul` **.tags .inline** `li` **.tag2 .tag-list0** `itemprop="keywords"` `a` **.label .label-info** `href="/radacina-site/selecteaza-toate-articolele-cu-acelasi-tag"` `li` **.tag3 .tag-list1** `` `itemprop="keywords"`` `a` **.label .label-info** `href="/radacina-site/selecteaza-toate-articolele-cu-acelasi-tag"` *`div itemprop="articleBody"`
 
   - `ul` **.pager .pagenav**
 
@@ -482,3 +461,37 @@ _`section` **.articles .container-fluid**_`div` **.item-page** `itemtype="http:/
 Acestea se vor duplica pentru a constitui module noi și vor fi numite după tipicul: Newsflash - NumeleLimbii. Vor fi atribuite poziției de template **news-small**
 
 Modulul de newsflash trebuie să apară doar pe prima pagină a fiecărei limbi.
+
+# Articole după cuvânt cheie
+
+Structura generată pentru Components->Tags->Options->Tagged Items->Default Tagged Items->Default
+
+* section.articles
+  * div.tag-category
+    * h2
+    * div.category-desc
+    * form#adminForm
+      * ul.category .list-striped
+        * li.cat-list-row0 .clearfix
+          * h3
+            * a
+          * span.tag-body
+        * li.cat-list-row1 .clearfix
+
+Structura generată pentru Components->Tags->Options->Tagged Items->Default Tagged Items->Compact Layout
+
+* section.articles
+  * div.tag-category
+    * div.category-desc
+    * form#adminForm
+      * fieldset.filters .btn-toolbar
+      * table.category .table .table-striped .table-bordered .table-hover
+        * thead
+          * tr
+            * th#categorylist_header_title .hasPopover
+            * th#categorylist_header_date .hasPopover
+        * tbody
+          * tr.cat-list-row0
+            * td.list-title
+              * a
+            * td.list-date small

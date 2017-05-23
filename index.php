@@ -131,54 +131,23 @@
         Semantic: este sectiune in body dedicata orientarii, fie prin meniu, fie prin alte instrumente
         -->
 
-        <nav class="orientation">
-
-          <!--
-          Meniul de navigare pentru zone ale siteului
-          Semantic: este ceea ce HTML5 desemneaza a fi un meniu
-          -->
-
-          <div class="navbar navbar-default">
-            <div class="navbar-inner">
-              <div class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                <a class="btn-navbar"> <!--  data-toggle="collapse" data-target=".nav-collapse" -->
-                  <span class="sr-only">Zone externe</span>
-                  <!--
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  -->
-                </a>
-              </div>
-
-              <div class="zone nav-collapse collapse">
-                <jdoc:include type="modules" name="zone" style="none" />
-              </div><!-- .nav-collapse .collapse -->
-
-            </div><!-- .navbar-inner -->
-          </div><!--.navbar .zone-->
-
-
-
-
-          <!--
-          Meniul de navigare pentru categoriile siteului
-          Semantic: este ceea ce HTML5 desemneaza a fi un meniu
-          -->
-          <div class="navbar nav2">
-            <div class="navbar-inner">
-
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <div class="container">
               <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="sr-only">Secțiuni site</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
               </a>
-
-              <div class="categories nav-collapse collapse">
-                <jdoc:include type="modules" name="categories" style="none" />
-              </div><!-- .nav-collapse .collapse -->
-
-            </div><!-- .navbar-inner -->
-          </div><!--.navbar .categories -->
-        </nav>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <!-- <li class="active"><a href="http://www.kosson.ro"><i class="icon-home icon-white"></i> Home</a></li> -->
+                  <jdoc:include type="modules" name="categories" style="none" />
+                </ul>
+              </div><!-- /.nav-collapse -->
+            </div><!-- /.container -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
 
         <!--
         Toate modulele (pozitii) din zona de continut a siteului:

@@ -51,7 +51,9 @@
     background-color: rgba(173, 101, 95, 1);
   }
 
-  /*.leading-0 {*/
+  /**
+   * CONȚINUTUL ESTE MAI BINE ÎNCADRAT ÎN LANDING
+   */
   [class|="leading"] {
     padding: 0 1em 1em;
     background-color: white;
@@ -73,8 +75,6 @@
     display: none;
   }
 
-
-
   /*
   * TAGS
   * .label, .badge sunt de la bootstrap și au nevoie de override
@@ -93,25 +93,9 @@
   .items-row ul.tags li:nth-child(n+4) {
     display: none;
   }
-
-
-
+  
   /*
-  *  STILIZARE TEXT INTRODUCTIV
-  */
-  /*div.leading-0 p {
-    display: none;
-  }
-
-  div.leading-0 p:nth-child(-n+3) {
-    display:block;
-  }*/
-  /*div.leading-0 > p:nth-child(n+5) {
-    display: none;
-  }*/
-
-  /*
-  * Stilizarea leadingului
+  * AFIȘAREA TITLURILOR
   */
   .leading-0 h2.item-title,
   .item .item-title {
@@ -124,6 +108,10 @@
     background-color: rgba(47, 109, 67, 1);
     text-align: center;
     margin: 0 auto;
+  }
+
+  div.page-header h2 {
+    font-variant: all-petite-caps;
   }
 
   .item .item-title {
@@ -155,7 +143,6 @@
     color: rgba(47, 109, 67, 1);
   }
 
-
   .createdby,
   .category-name,
   .create {
@@ -171,12 +158,39 @@
    */
   .hits {
     float: right;
+    font-size: small;
     font-weight: bolder;
     border: solid 1px green;
     /*border-radius: 0.5em/0.5em;*/
     border-radius: 50%;
     padding: 0 0.2em;
     background: hsla(0,0%,100%,.3);
+  }
+
+
+  /**
+   * TITLURILE ARTICOLELOR IDENTIFICATE DE TAG-URI
+   */
+
+  li[class|="cat-list"] h3 {
+    padding: 0 0.2em 0.2em;
+    font-variant: all-petite-caps;
+    line-height: 0.95em;
+    text-align: center;
+  }
+
+  ul.list-striped li:nth-child(odd):hover{
+    background-color: white;
+  }
+
+  span.tag-body {
+    background-color: white;
+  }
+
+  /* Compact layout */
+  #categorylist_header_date a:link,
+  tr[class|="cat-list"]:nth-child(even) td.list-date {
+    color: white;
   }
 
 

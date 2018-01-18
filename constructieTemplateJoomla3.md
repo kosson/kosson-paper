@@ -343,7 +343,7 @@ Multi Column Order | Down
 
 **Content->Article Manager->Options->Blog / Featured Layouts**
 
-Ceea ce s-a urmărit prin aceste setări este să ai un articol mare în prezentare și alte 9 care să prezinte continuitatea de publicare. În concluzie 10 articole „featured" pe prima pagină.
+Ceea ce s-a urmărit prin aceste setări este să ai un articol mare în prezentare și alte 9 care să prezinte continuitatea de publicare. În concluzie 10 articole ``featured` pe prima pagină.
 
 * `div` **.blog-featured** `itemtype="http://schema.org/Blog"` `itemscope=""`
   * `div` **.items-leading .clearfix**

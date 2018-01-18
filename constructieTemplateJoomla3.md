@@ -259,7 +259,7 @@ Folosește poziția `categories` introdusă prin `<jdoc:include type="module" na
 
 ### Content->Article Manager->Options->Blog / Featured Layouts
 
-Aceste setări se aplică pentru prezentarea tip blog sau featured layouts asta dacă nu sunt modificare de anumite elemente de meniu.
+Aceste setări se aplică pentru prezentarea tip `blog` sau `featured layouts` asta dacă nu sunt modificare de anumite elemente de meniu.
 
 **Schema aplicată:**
 

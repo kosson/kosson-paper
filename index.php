@@ -14,9 +14,10 @@
       xml:lang="<?php echo $this->language; ?>"
       lang="<?php echo $this->language; ?>"
       dir="<?php echo $this->direction; ?>"
+      itemscope itemtype="http://schema.org/WebPage"
       >
 
-      <head>
+      <head itemscope>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <jdoc:include type="head" />
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300&subset=latin,latin-ext,cyrillic,greek-ext,greek,cyrillic-ext' rel='stylesheet' type='text/css'>
@@ -68,7 +69,7 @@
         <![endif]-->
       </head>
 
-      <body>
+      <body itemtype="http://schema.org/mainContentOfPage">
         <!--
         Toate modulele (pozitii) din zona de header a siteului:
         * banner      (none)
@@ -77,7 +78,7 @@
         * news-small  (htm5)
         Semantic: este headerul siteului
         -->
-        <header>
+        <header itemtype="http://schema.org/WPHeader">
 
           <!--
           Introduci modulul in care apar bannerele
@@ -92,16 +93,16 @@
           LOGO | SEARCH | LANG
           Semantic: este sectiune a headerului
           -->
-          <section id="top">
+          <section itemscope id="top">
 
             <!-- LOGO -->
-            <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/logoKosson.png" alt="reprezentare logo Kosson" />
+            <img itemscope src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/logoKosson.png" alt="reprezentare logo Kosson" />
 
             <!--
             Introduci modulul de cautare
             Semantic: este diviziune în interiorul secțiunii de header
             -->
-            <div class="search">
+            <div itemscope class="search">
               <jdoc:include type="modules" name="search" style="none" />
             </div>
 
@@ -109,7 +110,7 @@
             Introduci modulul de selectare a limbilor
             Semantic: este diviziune în interiorul secțiunii de header
             -->
-            <div class="lang">
+            <div itemscope class="lang">
               <jdoc:include type="modules" name="lang" style="none" />
             </div>
 
@@ -119,7 +120,7 @@
           Introduci aici toate articolele din news formatate marunt.
           Semantic: este o sectiune noua a headerului
           -->
-          <section class="news-small">
+          <section itemscope itemprop="http://schema.org/NewsArticle" class="news-small">
             <jdoc:include type="modules" name="news-small" style="html5" />
           </section>
 
@@ -131,9 +132,9 @@
         Semantic: este sectiune in body dedicata orientarii, fie prin meniu, fie prin alte instrumente
         -->
 
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner">
-            <div class="container">
+        <div itemscope class="navbar navbar-inverse">
+          <div itemscope class="navbar-inner">
+            <div itemscope class="container">
               <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
@@ -154,22 +155,22 @@
         * column         (none)
         Semantic: este main in body
         -->
-        <main id="content" class="">
+        <main itemscope id="content" class="">
           <!-- O sectiune care cuprinde intregul continut -->
-          <section class="articles">
+          <section itemscope class="articles">
             <jdoc:include type="modules" name="column1" style="none" />
             <jdoc:include type="component" />
           </section>
         </main>
 
-        <footer class="">
+        <footer itemscope itemtype="http://schema.org/WPFooter" class="">
 
           <!-- Structuri primare de gestiune si asociere  -->
-          <section class="upper-footer">
+          <section itemscope class="upper-footer">
             <jdoc:include type="modules" name="infostructures" style="none" />
           </section>
 
-          <section class="main-footer">
+          <section itemscope class="main-footer">
             <jdoc:include type="modules" name="footer" style="none" />
           </section>
 

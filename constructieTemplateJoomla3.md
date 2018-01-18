@@ -1,31 +1,31 @@
 # Creează structura primară
 
+Mai întâi de toate ai nevoie de un subdirector în directorul **templates**.
+
 ## subdirector în /templates
 
 Creezi:
 
-_fișierul **index.php**_adaugi **favicon.ico** _fișierul **templateDetails.xml**_directorul css ***template.css** *directorul images
+Creează fișierul **index.php**, adaugi **favicon.ico** și fișierul **templateDetails.xml**. Apoi creezi directorul css și în el fișierul ***template.css**. Creează directorul images în directorul template-ului tău.
 
-# Crearea unei schițe de templateDetails.xml
+## Crearea unei schițe de templateDetails.xml
 
-Acest fișier este necesar pentru evidențierea tuturor resurselor ce care beneficiază template-ul. Acest fișier este absolut necesar pentru instalarea template-ul. Fără el instalarea nu se face. Dacă există resurse care nu sunt menționate la
-
-<files>, instalarea dă eroare.</files>
+Acest fișier este necesar pentru evidențierea tuturor resurselor ce care beneficiază template-ul. Acest fișier este absolut necesar pentru instalarea template-ul. Fără el instalarea nu se face. Dacă există resurse care nu sunt menționate la secțiunea `<files>`, instalarea template-ului după construcție, va da eroare.
 
 Câteva informații orientative se pot găsi și [pe pagina dedicată acestui fișier](http://docs.joomla.org/Creating_a_basic_templateDetails.xml_file).
 
 ```html
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="template">
-  <name>kosson-paper</name>
-  <creationDate>2014-11-29</creationDate>
+  <name>kosson-100</name>
+  <creationDate>2018-18-01</creationDate>
   <author>Nicolaie Constantinescu</author>
   <authorEmail>kosson@gmail.com</authorEmail>
   <authorUrl>http://www.kosson.ro</authorUrl>
   <copyright>Nicolaie Constantinescu</copyright>
   <license>CC-BY</license>
-  <version>1.0.0</version>
-  <description>Un template modern pentru noul Kosson</description>
+  <version>1.0</version>
+  <description>Template bazat pe kosson-paper, dar complet refăcut.</description>
   <files>
     <filename>index.php</filename>
     <filename>templateDetails.xml</filename>
@@ -33,14 +33,14 @@ Câteva informații orientative se pot găsi și [pe pagina dedicată acestui fi
     <folder>css</folder>
   </files>
   <positions>
+    <position>news-small</position>
+    <position>search</position>
+    <position>lang</position>
+    <position>zone</position>
+    <position>categories</position>
+    <position>column1</position>
     <position>breadcrumb</position>
-    <position>left</position>
-    <position>right</position>
-    <position>top</position>
-    <position>user1</position>
-    <position>user2</position>
-    <position>user3</position>
-    <position>user4</position>
+    <position>infostructures</position>
     <position>footer</position>
   </positions>
 </extension>
@@ -54,6 +54,12 @@ Fișierul testează inițial dacă este inițializează o aplicație Joomla! Dac
 
 ```php
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
+```
+
+În cazul template-ului kosson-100 mai trebuie adăugat înainte de restricția `or die` următorul apel:
+
+```php
+$doc = JFactory::getDocument();
 ```
 
 Pasul următor este menționarea folosirii HTML-ului 5.
@@ -94,7 +100,7 @@ Pentru adăugarea de imagini din **/images** se va folosi:
 <img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/myimage.png" alt="Custom image" class="customImage" />
 ```
 
-Începând cu headerul Joomla! injectează codul generat de aplicație prin intermediul declarațiilor jdoc - **< jdoc:include />**. Tipurile specificate de conținut ce vor fi injectate de Joomla! prin jdoc pot fi:
+Începând cu headerul Joomla! injectează codul generat de aplicație prin intermediul declarațiilor jdoc - **< jdoc:include />**. Tipurile specificate de conținut ce vor fi injectate de Joomla! prin `jdoc` pot fi:
 
 _head_ modules _component_ message
 
@@ -131,11 +137,41 @@ Cea mai simplă structură este:
 
 ### ATENȚIE!
 
-**< jdoc:include type="component" />** apare o singură dată în întregul template.
+**< jdoc:include type="component" />** apare o singură dată în întregul template. Mai este un element care apare o singură dată într-un document: `<jdoc:include type="message" />`.
 
-Modulele care generează conținut în pagină li se poate preciza cum vor afișa acel conținut prin menționarea atributului style la declarația jdoc
+## Introducerea modulelor
 
-Stiluri de modelare a codului:
+Pentru a introduce modulele, va trebui inserat în scriptul php o secvență:
+
+```php
+<jdoc:include type="module" name="categories" title="Main Menu" />
+```
+
+Să analizăm atributele:
+
+- `type` indică faptul că avem un modul pe care-l inserăm
+- la `name`, numele modulului trebuie să fie identic cu cel al numelui modului pentru a se face legătura (de ex.: mod_meniulprincipal), iar
+- `title` este pur și simplu titlul afișat al codului, dacă se optează din setări să fie afișat în pagină
+
+După ce ai creat un modul, acesta trebuie publicat (a se citi: activat) pentru ca acesta să injecteze conținutul.
+Tot conținutul HTML al paginii web este generat de module și `component`.
+Modulelor care generează conținut în pagină li se poate preciza cum vor afișa acel conținut prin menționarea atributului style la declarația `jdoc`. Trebuie să-ți aduci aminte mereu de faptul că ceea ce ai trecut în `name`, trebuie trecut și în fișierul XML: templateDetails.xml în secțiunea `positions`:
+
+```xml
+<positions>
+  <position>news-small</position>
+  <position>search</position>
+  <position>lang</position>
+  <position>zone</position>
+  <position>categories</position>
+  <position>column1</position>
+  <position>breadcrumbs</position>
+  <position>infostructures</position>
+  <position>footer</position>
+</positions>
+```
+
+Stiluri de modelare a codului care va genera identitatea vizuală:
 
 #### none
 
@@ -167,7 +203,7 @@ Stiluri de modelare a codului:
 </div>
 ```
 
-# Construcția lui kosson-paper
+## Construcția lui kosson-100
 
 În head este necesară introducerea directivei meta viewport
 
@@ -189,7 +225,7 @@ Incarca fontul din CSS pentru tot siteul
 }
 ```
 
-Tot în head în caz că sunt probleme cu IE mai vechi există o soluție
+Tot în `head` în caz că sunt probleme cu IE mai vechi există o soluție
 
 ```html
 <!--[if lt IE 9]>
@@ -203,6 +239,19 @@ Tot în head în caz că sunt probleme cu IE mai vechi există o soluție
 // Incarca CSS-ul Bootstrap-ului
 JHtmlBootstrap::loadCss($includeMaincss = true);
 ```
+
+## Lista modulelor în Kosson
+
+### Modulul `Continut`
+
+Title: Continut
+Position: categories
+Language: Romanian
+
+Folosește poziția `categories` introdusă prin `<jdoc:include type="module" name="categories" title="categoriile conținutului" style="none" />` din `index.php`.
+În zona `Menu Assignement`, bifezi dintre elementele de meniu, care la momentul selecției și încărcării conținutului aferent, va încărca și meniul principal.
+
+În structura site-ului Kosson sunt prevăute două tipuri de meniuri. Primul este cel legat de menționarea celor mai importante secțiuni de conținut, care reflectă și categoriile definite intern. Mai există un tip de meniu numit `zone`, care are trimiteri către zone de mare întindere ca și volum de conținut cum ar fi Depozit.
 
 # Structura standard HTML generata de `jdoc:include type="component"`
 

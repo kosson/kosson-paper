@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="template">
-  <name>kosson-paper</name>
-  <creationDate>2016-10-9</creationDate>
+  <name>kosson-100</name>
+  <creationDate>2018-18-01</creationDate>
   <author>Nicolaie Constantinescu</author>
   <authorEmail>kosson@gmail.com</authorEmail>
   <authorUrl>http://www.kosson.ro</authorUrl>
   <copyright>Nicolaie Constantinescu</copyright>
   <license>CC-BY</license>
-  <version>2.0</version>
-  <description>Template kosson-paper actualizat la versiunea 2.0 după trecerea la 3.6.2. Este un template rafinat de la versiunea 1.1</description>
+  <version>1.0</version>
+  <description>Template bazat pe kosson-paper, dar complet refăcut.</description>
   <files>
     <filename>index.php</filename>
     <filename>templateDetails.xml</filename>

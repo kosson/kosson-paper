@@ -1,7 +1,6 @@
 <?php
   $doc = JFactory::getDocument();
-
-  defined( '_JEXEC' ) or die( 'Restricted access' );
+  defined( '_JEXEC' ) or die( 'I know you will find a way to get past this, but to what end?! This is only a place of learning. Thank you for understanding.' );
 
   //Adaugă frameworkul bootstrap
   JHtml::_('bootstrap.framework');
@@ -69,7 +68,10 @@
         <![endif]-->
       </head>
 
+<!-- BODY -->
       <body itemtype="http://schema.org/mainContentOfPage">
+
+<!-- HEADER: BANNER, SEARCH, LANG, NEWS-SMALL -->
         <!--
         Toate modulele (pozitii) din zona de header a siteului:
         * banner      (none)
@@ -79,13 +81,17 @@
         Semantic: este headerul siteului
         -->
         <header itemtype="http://schema.org/WPHeader">
-
+<!-- MESAJE DE SISTEM -->
+          <!-- Introduc aici fragmentul care va afișa mesajele sistemului incluzând pe cele de eroare. -->
+          <jdoc:include type="message" />
+          <!-- Mesajele de sistem pot fi stilizate modificând: templates\system\css\system.css -->
+<!-- BANNER::MODULE -->
           <!--
           Introduci modulul in care apar bannerele
           Semantic: este sectiune a headerului
           -->
           <section id="banner">
-            <jdoc:include type="modules" name="banner" style="none" />
+            <jdoc:include type="module" name="banner" style="none" />
           </section>
 
           <!--
@@ -95,43 +101,41 @@
           -->
           <section itemscope id="top">
 
-            <!-- LOGO -->
+<!-- LOGO -->
             <img itemscope src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/logoKosson.png" alt="reprezentare logo Kosson" />
-
+<!-- SEARCH::MODULE -->
             <!--
             Introduci modulul de cautare
             Semantic: este diviziune în interiorul secțiunii de header
             -->
             <div itemscope class="search">
-              <jdoc:include type="modules" name="search" style="none" />
+              <jdoc:include type="module" name="search" style="none" />
             </div>
-
+<!-- LANG::MODULE -->
             <!--
             Introduci modulul de selectare a limbilor
             Semantic: este diviziune în interiorul secțiunii de header
             -->
             <div itemscope class="lang">
-              <jdoc:include type="modules" name="lang" style="none" />
+              <jdoc:include type="module" name="lang" style="none" />
             </div>
-
           </section>
-
+<!-- NEWS-SMALL::MODULE -->
           <!--
           Introduci aici toate articolele din news formatate marunt.
           Semantic: este o sectiune noua a headerului
           -->
           <section itemscope itemprop="http://schema.org/NewsArticle" class="news-small">
-            <jdoc:include type="modules" name="news-small" style="html5" />
+            <jdoc:include type="module" name="news-small" style="html5" />
           </section>
-
         </header>
 
         <!--
         Toate modulele (pozitii) din zona de orientare a siteului:
-        * nav         (none)
+        * nav   (none)
         Semantic: este sectiune in body dedicata orientarii, fie prin meniu, fie prin alte instrumente
         -->
-
+<!-- CATEGORIES -->
         <div itemscope class="navbar navbar-inverse">
           <div itemscope class="navbar-inner">
             <div itemscope class="container">
@@ -142,14 +146,18 @@
               </a>
               <div class="nav-collapse collapse">
                 <ul class="nav">
-                  <!-- <li class="active"><a href="http://www.kosson.ro"><i class="icon-home icon-white"></i> Home</a></li> -->
-                  <jdoc:include type="modules" name="categories" style="none" />
+<!-- CATEGORIES::MODULE -->
+                  <li class="active"><a href="http://www.kosson.ro"><i class="icon-home icon-white"></i> Home</a></li>
+                  <jdoc:include type="module" name="categories" title="categoriile conținutului" style="none" />
                 </ul>
               </div><!-- /.nav-collapse -->
+<!-- BREADCRUMBS::MODULE -->
+              <p>
+                <jdoc:include type="module" name="breadcrumbs" title="Breadcrumbs" />
+              </p>
             </div><!-- /.container -->
           </div><!-- /.navbar-inner -->
         </div><!-- /.navbar -->
-
         <!--
         Toate modulele (pozitii) din zona de continut a siteului:
         * column         (none)
@@ -158,20 +166,23 @@
         <main itemscope id="content" class="">
           <!-- O sectiune care cuprinde intregul continut -->
           <section itemscope class="articles">
-            <jdoc:include type="modules" name="column1" style="none" />
+<!-- COLUMN1::MODULE -->
+            <!-- meniu arhivă și login pe blog nick -->
+            <jdoc:include type="module" name="column1" style="none" />
+<!-- COMPONENT::COMPONENT -->
             <jdoc:include type="component" />
           </section>
         </main>
 
         <footer itemscope itemtype="http://schema.org/WPFooter" class="">
-
+<!-- INFOSTRUCTURES::MODULE -->
           <!-- Structuri primare de gestiune si asociere  -->
           <section itemscope class="upper-footer">
-            <jdoc:include type="modules" name="infostructures" style="none" />
+            <jdoc:include type="module" name="infostructures" style="none" />
           </section>
 
           <section itemscope class="main-footer">
-            <jdoc:include type="modules" name="footer" style="none" />
+            <jdoc:include type="module" name="footer" style="none" />
           </section>
 
         </footer>
